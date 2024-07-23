@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqksefg4gk8xa"]
+
+[ext_resource type="Script" path="res://FlappyBun/Scripts/Killzone.cs" id="1_1jg1f"]
+[ext_resource type="Texture2D" uid="uid://cpirvsbrpaax4" path="res://FlappyBun/Graphics/wood-long.png" id="1_kyuse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1a6m"]
+size = Vector2(14, 155)
+
+[node name="Wood" type="Area2D"]
+script = ExtResource("1_1jg1f")
+
+[node name="Up" type="Sprite2D" parent="."]
+position = Vector2(0, -100)
+rotation = -3.14159
+texture = ExtResource("1_kyuse")
+
+[node name="Down" type="Sprite2D" parent="."]
+position = Vector2(0, 100)
+texture = ExtResource("1_kyuse")
+
+[node name="CollisionUp" type="CollisionShape2D" parent="."]
+position = Vector2(0, -102)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_n1a6m")
+
+[node name="CollisionDown" type="CollisionShape2D" parent="."]
+position = Vector2(0, 101.5)
+shape = SubResource("RectangleShape2D_n1a6m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
