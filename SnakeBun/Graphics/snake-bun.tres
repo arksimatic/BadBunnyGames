@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cm2tk324rvvig"]
+
+[ext_resource type="Texture2D" uid="uid://cee7spbjv18ko" path="res://SnakeBun/Graphics/snake-bun-head.png" id="1_25nk4"]
+
+[resource]
+atlas = ExtResource("1_25nk4")

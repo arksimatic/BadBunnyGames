@@ -4,10 +4,18 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="FlappyBun" type="Button" parent="."]
+offset_right = 90.0
+offset_bottom = 31.0
 text = "FlappyBun"
 script = ExtResource("1_aoiyv")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="SnakeBun" type="Button" parent="."]
+offset_left = 123.0
+offset_right = 213.0
+offset_bottom = 31.0
+text = "SnakeBun"
+script = ExtResource("1_aoiyv")
+
+[connection signal="pressed" from="FlappyBun" to="FlappyBun" method="_on_pressed"]
+[connection signal="pressed" from="SnakeBun" to="SnakeBun" method="_on_pressed"]
