@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mhvr0no38a4s"
-path="res://.godot/imported/flappy_bun.png-e4e5efe4c500b580986adf4f736f0c9e.ctex"
+uid="uid://6yi8wy3ipnbn"
+path="res://.godot/imported/snake_bun.png-0899e0ab668b90f203bda94f7d3737e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://flappy_bun.png"
-dest_files=["res://.godot/imported/flappy_bun.png-e4e5efe4c500b580986adf4f736f0c9e.ctex"]
+source_file="res://snake_bun.png"
+dest_files=["res://.godot/imported/snake_bun.png-0899e0ab668b90f203bda94f7d3737e0.ctex"]
 
 [params]
 

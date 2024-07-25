@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mhvr0no38a4s"
-path="res://.godot/imported/flappy_bun.png-e4e5efe4c500b580986adf4f736f0c9e.ctex"
+uid="uid://5q5bhouk2btr"
+path="res://.godot/imported/bun_tower.png-568b39f978b9f4a1335a3a38a7e90cda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://flappy_bun.png"
-dest_files=["res://.godot/imported/flappy_bun.png-e4e5efe4c500b580986adf4f736f0c9e.ctex"]
+source_file="res://bun_tower.png"
+dest_files=["res://.godot/imported/bun_tower.png-568b39f978b9f4a1335a3a38a7e90cda.ctex"]
 
 [params]
 
