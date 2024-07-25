@@ -17,5 +17,13 @@ offset_bottom = 31.0
 text = "SnakeBun"
 script = ExtResource("1_aoiyv")
 
+[node name="BunTower" type="Button" parent="."]
+offset_left = 252.0
+offset_right = 342.0
+offset_bottom = 31.0
+text = "BunTower"
+script = ExtResource("1_aoiyv")
+
 [connection signal="pressed" from="FlappyBun" to="FlappyBun" method="_on_pressed"]
 [connection signal="pressed" from="SnakeBun" to="SnakeBun" method="_on_pressed"]
+[connection signal="pressed" from="BunTower" to="BunTower" method="_on_pressed"]

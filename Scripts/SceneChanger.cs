@@ -5,23 +5,30 @@ public partial class SceneChanger : Node
 {
 	private void _on_pressed()
 	{
-		if (Name == "FlappyBun")
+		switch(Name)
 		{
-			LoadFlappyBun();
-		}
-
-		if (Name == "SnakeBun")
-		{
-			LoadSnakeBun();
+			case "FlappyBun":
+				LoadFlappyBun();
+				break;
+			case "SnakeBun":
+				LoadSnakeBun();
+				break;
+			case "BunTower":
+				LoadBunTower();
+				break;
 		}
 	}
 
+	private void LoadFlappyBun()
+	{
+		GetTree().ChangeSceneToFile($"{GlobalPaths.FlappyBun}/Scenes/main_scene.tscn");
+	}
 	private void LoadSnakeBun()
 	{
 		GetTree().ChangeSceneToFile($"{GlobalPaths.SnakeBun}/Scenes/main_scene.tscn");
 	}
-	private void LoadFlappyBun()
+	private void LoadBunTower()
 	{
-		GetTree().ChangeSceneToFile($"{GlobalPaths.FlappyBun}/Scenes/main_scene.tscn");
+		GetTree().ChangeSceneToFile($"{GlobalPaths.BunTower}/Scenes/main_scene.tscn");
 	}
 }

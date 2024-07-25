@@ -75,7 +75,6 @@ animations = [{
 radius = 4.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3qpbk"]
-load_path = "res://.godot/imported/mibib-cropped.png-666b8bdaa169bf907ecc03458cd7baa8.ctex"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qswyy"]
 
