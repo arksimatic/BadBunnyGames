@@ -16,6 +16,9 @@ public partial class SceneChanger : Node
 			case "BunTower":
 				LoadBunTower();
 				break;
+			case "BomBun":
+				LoadBomBun();
+				break;
 		}
 	}
 
@@ -30,5 +33,9 @@ public partial class SceneChanger : Node
 	private void LoadBunTower()
 	{
 		GetTree().ChangeSceneToFile($"{GlobalPaths.BunTower}/Scenes/main_scene.tscn");
+	}
+	private void LoadBomBun()
+	{
+		GetTree().ChangeSceneToFile($"{GlobalPaths.BomBun}/Scenes/main_scene.tscn");
 	}
 }
