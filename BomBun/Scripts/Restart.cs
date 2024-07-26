@@ -1,9 +1,12 @@
 using Godot;
 
-public partial class Restart : Node
+namespace BadBunnyGames.BomBun
 {
-	private void _on_pressed()
+	public partial class Restart : Node
 	{
-		GetTree().ReloadCurrentScene();
+		private void _on_pressed()
+		{
+			GetTree().ReloadCurrentScene();
+		}
 	}
 }

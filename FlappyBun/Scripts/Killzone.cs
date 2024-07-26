@@ -1,17 +1,16 @@
 using Godot;
-using System;
 
-public partial class Killzone : Node2D
+namespace BadBunnyGames.FlappyBun
 {
-	private void _on_body_entered(Node2D body)
+	public partial class Killzone : Node2D
 	{
-		if(body.Name == "Player")
+		private void _on_body_entered(Node2D body)
 		{
-			GD.Print("Lose");
-			GetTree().ReloadCurrentScene();
+			if (body.Name == "Player")
+			{
+				GD.Print("Lose");
+				GetTree().ReloadCurrentScene();
+			}
 		}
 	}
 }
-
-
-

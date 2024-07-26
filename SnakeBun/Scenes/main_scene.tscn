@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgpy5gdxesu5j"]
+[gd_scene load_steps=6 format=3 uid="uid://bgpy5gdxesu5j"]
 
 [ext_resource type="Texture2D" uid="uid://dhb4ndcjchh05" path="res://SnakeBun/Graphics/arena.png" id="1_5mef7"]
 [ext_resource type="Script" path="res://SnakeBun/Scripts/Player.cs" id="2_g6ukp"]
-[ext_resource type="Script" path="res://SnakeBun/Scripts/NomNomSpawner.cs" id="3_tpkxe"]
 [ext_resource type="Texture2D" uid="uid://yprn8bewvolw" path="res://SnakeBun/Graphics/Carrot.png" id="4_ei7yg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxmy8"]
@@ -45,7 +44,6 @@ position = Vector2(0, 64)
 
 [node name="NomNomSpawner" type="Node2D" parent="."]
 position = Vector2(-80, -80)
-script = ExtResource("3_tpkxe")
 
 [node name="Food" type="Sprite2D" parent="NomNomSpawner"]
 unique_name_in_owner = true

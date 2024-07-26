@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace SnakeBun.Scripts
+namespace BadBunnyGames.SnakeBun
 {
 	public class Helper
 	{

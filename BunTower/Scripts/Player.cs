@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace BunTower
+namespace BadBunnyGames.BunTower
 {
 	public partial class Player : CharacterBody2D
 	{

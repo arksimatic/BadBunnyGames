@@ -1,10 +1,8 @@
 ﻿using Godot;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+namespace BadBunnyGames
+{
     static class ExtensionMethods
     {
         public static Texture2D Scale(this Texture2D texture, Int32 width, Int32 height)
@@ -14,4 +12,4 @@ using System.Threading.Tasks;
             return ImageTexture.CreateFromImage(image);
         }
     }
-
+}

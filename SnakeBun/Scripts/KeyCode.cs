@@ -1,4 +1,4 @@
-namespace SnakeBun.Scripts
+namespace BadBunnyGames.SnakeBun
 {
 	internal class KeyCode
 	{
