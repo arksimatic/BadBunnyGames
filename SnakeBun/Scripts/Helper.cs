@@ -20,7 +20,7 @@ namespace BadBunnyGames.SnakeBun
 			else if (degrees == 90) return KeyCode.Right;
 			else if (degrees == 0) return KeyCode.Up;
 			else if (degrees == 180) return KeyCode.Down;
-			else return "NULL";
+			else return default;
 		}
 	}
 }

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mtyi883jj51l"]
+[gd_scene load_steps=3 format=3 uid="uid://mtyi883jj51l"]
 
-[ext_resource type="Script" path="res://Scripts/SceneChanger.cs" id="1_aoiyv"]
+[ext_resource type="Script" path="res://Scripts/SceneChanger.cs" id="1_4n7mr"]
+[ext_resource type="PackedScene" uid="uid://dtrq5njrmnbp8" path="res://Scenes/esc_controller.tscn" id="2_sq16o"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,28 +9,31 @@
 offset_right = 90.0
 offset_bottom = 31.0
 text = "FlappyBun"
-script = ExtResource("1_aoiyv")
+script = ExtResource("1_4n7mr")
 
 [node name="SnakeBun" type="Button" parent="."]
 offset_left = 123.0
 offset_right = 213.0
 offset_bottom = 31.0
 text = "SnakeBun"
-script = ExtResource("1_aoiyv")
+script = ExtResource("1_4n7mr")
 
 [node name="BunTower" type="Button" parent="."]
 offset_left = 252.0
 offset_right = 342.0
 offset_bottom = 31.0
 text = "BunTower"
-script = ExtResource("1_aoiyv")
+script = ExtResource("1_4n7mr")
 
 [node name="BomBun" type="Button" parent="."]
 offset_left = 376.0
 offset_right = 466.0
 offset_bottom = 31.0
 text = "BomBun"
-script = ExtResource("1_aoiyv")
+script = ExtResource("1_4n7mr")
+
+[node name="EscController" parent="." instance=ExtResource("2_sq16o")]
+visible = false
 
 [connection signal="pressed" from="FlappyBun" to="FlappyBun" method="_on_pressed"]
 [connection signal="pressed" from="SnakeBun" to="SnakeBun" method="_on_pressed"]

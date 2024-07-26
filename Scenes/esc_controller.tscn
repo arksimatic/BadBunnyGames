@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtrq5njrmnbp8"]
+
+[ext_resource type="Script" path="res://Scripts/EscController.cs" id="1_y4mre"]
+[ext_resource type="Script" path="res://Scripts/Return.cs" id="2_mqw62"]
+[ext_resource type="Script" path="res://Scripts/Back.cs" id="3_4odo6"]
+
+[node name="EscController" type="Node2D"]
+position = Vector2(73, 67)
+script = ExtResource("1_y4mre")
+
+[node name="EscPanel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 462.0
+
+[node name="Return" type="Button" parent="EscPanel"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 173.0
+offset_right = 763.0
+offset_bottom = 248.0
+text = "Menu"
+script = ExtResource("2_mqw62")
+
+[node name="Back" type="Button" parent="EscPanel"]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 173.0
+offset_right = 494.0
+offset_bottom = 255.0
+text = "Back"
+script = ExtResource("3_4odo6")
+
+[connection signal="pressed" from="EscPanel/Return" to="EscPanel/Return" method="_on_pressed"]
+[connection signal="pressed" from="EscPanel/Back" to="EscPanel/Back" method="_on_pressed"]

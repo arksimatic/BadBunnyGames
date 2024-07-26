@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://dr3n723ieidkk"]
+[gd_scene load_steps=25 format=3 uid="uid://dr3n723ieidkk"]
 
 [ext_resource type="Script" path="res://BunTower/Scripts/Player.cs" id="1_5vyyw"]
 [ext_resource type="Texture2D" uid="uid://ibo6mr40yp4m" path="res://BunTower/Jumping_Rabbit.png" id="2_40hbr"]
 [ext_resource type="Texture2D" uid="uid://bol58sgdx6yqo" path="res://icon.svg" id="3_c7i7r"]
 [ext_resource type="Script" path="res://BunTower/Scripts/PlatformGenerator.cs" id="4_v2qab"]
+[ext_resource type="PackedScene" uid="uid://dtrq5njrmnbp8" path="res://Scenes/esc_controller.tscn" id="5_e0vps"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37b3l"]
 atlas = ExtResource("2_40hbr")
@@ -132,6 +133,8 @@ script = ExtResource("1_5vyyw")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
+
+[node name="EscController" parent="Player/Camera2D" instance=ExtResource("5_e0vps")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_754td")
