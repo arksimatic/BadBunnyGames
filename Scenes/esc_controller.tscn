@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://mcaekaoeqvh4"]
 
 [ext_resource type="Script" path="res://Scripts/EscController.cs" id="1_y4mre"]
-[ext_resource type="Theme" uid="uid://k43khfa7qlr4" path="res://new_theme.tres" id="2_auvnd"]
+[ext_resource type="Theme" uid="uid://k43khfa7qlr4" path="res://esc_controller_theme.tres" id="2_auvnd"]
 
 [node name="EscController" type="CanvasLayer"]
 script = ExtResource("1_y4mre")
