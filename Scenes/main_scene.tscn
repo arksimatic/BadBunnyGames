@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://mtyi883jj51l"]
 
 [ext_resource type="Script" path="res://Scripts/SceneChanger.cs" id="1_4n7mr"]
-[ext_resource type="PackedScene" uid="uid://dtrq5njrmnbp8" path="res://Scenes/esc_controller.tscn" id="2_sq16o"]
+[ext_resource type="PackedScene" uid="uid://mcaekaoeqvh4" path="res://Scenes/esc_controller.tscn" id="2_sq16o"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,7 +33,6 @@ text = "BomBun"
 script = ExtResource("1_4n7mr")
 
 [node name="EscController" parent="." instance=ExtResource("2_sq16o")]
-visible = false
 
 [connection signal="pressed" from="FlappyBun" to="FlappyBun" method="_on_pressed"]
 [connection signal="pressed" from="SnakeBun" to="SnakeBun" method="_on_pressed"]

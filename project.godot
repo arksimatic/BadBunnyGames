@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="BadBunnyGames"
 
+[gui]
+
+theme/default_font_generate_mipmaps=true
+
 [input]
 
 Left={
@@ -55,3 +59,4 @@ Esc={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/default_filters/use_nearest_mipmap_filter=true
