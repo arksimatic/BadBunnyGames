@@ -14,7 +14,7 @@ namespace BadBunnyGames.BomBun
 		private Int32 _bombCount { get; set; } = 1;
 		public override void _Ready()
 		{
-			_bunMine = GD.Load<PackedScene>($"{GlobalPaths.BomBun}/Scenes/bun_bomb.tscn");
+			_bunMine = GD.Load<PackedScene>($"{GlobalPaths.BoomBun}/Scenes/bun_bomb.tscn");
 			_buttons = new List<BunButton>();
 
 			this.Columns = Y;

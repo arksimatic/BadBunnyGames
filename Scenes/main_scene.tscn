@@ -89,9 +89,9 @@ layout_mode = 2
 text = "Bun Tower"
 script = ExtResource("1_4n7mr")
 
-[node name="BomBun" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer"]
+[node name="BoomBun" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Bom Bun"
+text = "Boom Bun"
 script = ExtResource("1_4n7mr")
 
 [node name="SpacerRight" type="Control" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer"]
@@ -103,4 +103,4 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/FlappyBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/FlappyBun" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/SnakeBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/SnakeBun" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BunTower" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BunTower" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BomBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BomBun" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BoomBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BoomBun" method="_on_pressed"]

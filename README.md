@@ -1,6 +1,6 @@
 This repository will contain bunch of small and badly done games in Godot. Done quick, generally just for learning purposes.
 
-!(menu.png)
+![Menu](menu.png)
 
 ### Games:
 
@@ -16,6 +16,6 @@ Bun Tower
 
 ![Bun Tower](bun_tower.png)
 
-Bom Bun
+Boom Bun
 
-![Bom Bun](bom_bun.png)
+![Boom Bun](boom_bun.png)

@@ -19,10 +19,10 @@ namespace BadBunnyGames.BomBun
 		private GameController _board { get; set; }
 		public override void _Ready()
 		{
-			_bombTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.BomBun}/Graphics/bomb.png");
-			_emptyTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.BomBun}/Graphics/empty.png");
-			_coveredTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.BomBun}/Graphics/unknown.png");
-			_lockedTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.BomBun}/Graphics/lock.png");
+			_bombTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.BoomBun}/Graphics/bomb.png");
+			_emptyTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.BoomBun}/Graphics/empty.png");
+			_coveredTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.BoomBun}/Graphics/unknown.png");
+			_lockedTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.BoomBun}/Graphics/lock.png");
 
 			this.Icon = _coveredTexture;
 			_board = GetParent<GameController>();

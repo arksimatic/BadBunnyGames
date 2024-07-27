@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqr44avn0i8y0"
-path="res://.godot/imported/bom_bun.png-a14a7706a5989ca8339f093c8a9b5ff0.ctex"
+uid="uid://bgxacl3n8wd2m"
+path="res://.godot/imported/lock.png-d8f0ae5575a12db1f201ca9039c57817.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bom_bun.png"
-dest_files=["res://.godot/imported/bom_bun.png-a14a7706a5989ca8339f093c8a9b5ff0.ctex"]
+source_file="res://BoomBun/Graphics/lock.png"
+dest_files=["res://.godot/imported/lock.png-d8f0ae5575a12db1f201ca9039c57817.ctex"]
 
 [params]
 
