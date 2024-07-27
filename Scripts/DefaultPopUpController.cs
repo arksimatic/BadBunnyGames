@@ -2,7 +2,7 @@ using Godot;
 
 namespace BadBunnyGames
 {
-	public partial class EscController : CanvasLayer
+	public partial class DefaultPopUpController : CanvasLayer
 	{
 		public override void _Ready()
 		{
@@ -10,7 +10,7 @@ namespace BadBunnyGames
 		}
 		public override void _Process(double delta)
 		{
-			if (Input.IsActionJustPressed(KeyCode.Esc))
+			if (Input.IsActionJustPressed(KeyCode.Esc) && Name == "Pause")
 			{
 				if(GetTree().Paused)
 				{

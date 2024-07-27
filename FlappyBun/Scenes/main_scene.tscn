@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cc8hr55uk2xdc" path="res://FlappyBun/Graphics/background.png" id="5_kapu0"]
 [ext_resource type="Script" path="res://FlappyBun/Scripts/Killzone.cs" id="6_8tdmu"]
 [ext_resource type="Script" path="res://FlappyBun/Scripts/TimeFreezer.cs" id="8_wp6bf"]
-[ext_resource type="PackedScene" uid="uid://dtrq5njrmnbp8" path="res://Scenes/esc_controller.tscn" id="9_5qmnf"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="9_tve5e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tnsay"]
 atlas = ExtResource("4_4kwo2")
@@ -147,6 +147,6 @@ position = Vector2(798, 798)
 scale = Vector2(100, 100)
 texture = ExtResource("5_kapu0")
 
-[node name="EscController" parent="." instance=ExtResource("9_5qmnf")]
+[node name="Addons" parent="." instance=ExtResource("9_tve5e")]
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

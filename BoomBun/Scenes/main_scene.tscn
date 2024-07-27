@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvgc5s0oa72wi"]
 
 [ext_resource type="Script" path="res://BoomBun/Scripts/GameController.cs" id="1_4ne8y"]
-[ext_resource type="PackedScene" uid="uid://mcaekaoeqvh4" path="res://Scenes/esc_controller.tscn" id="1_ccbca"]
 [ext_resource type="Script" path="res://BoomBun/Scripts/Restart.cs" id="2_k17tl"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="3_hnnxs"]
 
 [node name="BoomBun" type="Node2D"]
-
-[node name="EscController" parent="." instance=ExtResource("1_ccbca")]
 
 [node name="Board" type="GridContainer" parent="."]
 unique_name_in_owner = true
@@ -52,5 +50,7 @@ theme_override_font_sizes/font_size = 5
 text = "YOU WON"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Addons" parent="." instance=ExtResource("3_hnnxs")]
 
 [connection signal="pressed" from="Restart" to="Restart" method="_on_pressed"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://mtyi883jj51l"]
 
 [ext_resource type="Script" path="res://Scripts/SceneChanger.cs" id="1_4n7mr"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="1_khrgs"]
 [ext_resource type="Theme" uid="uid://cslbanmlp38gl" path="res://main_menu_theme.tres" id="1_pt276"]
 [ext_resource type="Texture2D" uid="uid://chr021wnqqgp8" path="res://white-bun.png" id="2_6slqi"]
-[ext_resource type="PackedScene" uid="uid://mcaekaoeqvh4" path="res://Scenes/esc_controller.tscn" id="2_sq16o"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -98,7 +98,7 @@ script = ExtResource("1_4n7mr")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EscController" parent="." instance=ExtResource("2_sq16o")]
+[node name="Addons" parent="." instance=ExtResource("1_khrgs")]
 
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/FlappyBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/FlappyBun" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/SnakeBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/SnakeBun" method="_on_pressed"]

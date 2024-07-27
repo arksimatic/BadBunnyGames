@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgpy5gdxesu5j"]
 
 [ext_resource type="Texture2D" uid="uid://dhb4ndcjchh05" path="res://SnakeBun/Graphics/arena.png" id="1_5mef7"]
-[ext_resource type="PackedScene" uid="uid://mcaekaoeqvh4" path="res://Scenes/esc_controller.tscn" id="1_q0c76"]
 [ext_resource type="Script" path="res://SnakeBun/Scripts/Player.cs" id="2_g6ukp"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="4_71o5q"]
 [ext_resource type="Texture2D" uid="uid://yprn8bewvolw" path="res://SnakeBun/Graphics/Carrot.png" id="4_ei7yg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxmy8"]
@@ -14,8 +14,6 @@ texture = ExtResource("1_5mef7")
 sources/0 = SubResource("TileSetAtlasSource_jxmy8")
 
 [node name="MainScene" type="Node2D"]
-
-[node name="EscController" parent="." instance=ExtResource("1_q0c76")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_l13b8")
@@ -53,3 +51,5 @@ unique_name_in_owner = true
 position = Vector2(8, 8)
 scale = Vector2(0.056, 0.056)
 texture = ExtResource("4_ei7yg")
+
+[node name="Addons" parent="." instance=ExtResource("4_71o5q")]
