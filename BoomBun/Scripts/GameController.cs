@@ -12,10 +12,12 @@ namespace BadBunnyGames.BomBun
 		private PackedScene _bunMine { get; set; }
 		private List<BunButton> _buttons;
 		private Int32 _bombCount { get; set; } = 1;
+		private CanvasLayer _addons;
 		public override void _Ready()
 		{
 			_bunMine = GD.Load<PackedScene>($"{GlobalPaths.BoomBun}/Scenes/bun_bomb.tscn");
 			_buttons = new List<BunButton>();
+			_addons = GetNode<CanvasLayer>("%Addons");
 
 			this.Columns = Y;
 
@@ -138,7 +140,7 @@ namespace BadBunnyGames.BomBun
 
 			if (IsGameLost())
 			{
-				GD.Print("You lost!");
+				GetNode<Addons>("%Addons")._on_game_over();
 			}
 			else if (IsGameWon())
 			{
@@ -154,10 +156,6 @@ namespace BadBunnyGames.BomBun
 		{
 			GD.Print($"{_buttons.Where(btn => btn.IsBun && btn.IsUncovered).Count()} bombs found");
 			return _buttons.Where(btn => btn.IsBun && btn.IsUncovered).Count() > 0;
-		}
-		public override void _Process(double delta)
-		{
-
 		}
 
 		private void SpawnNextBunMine(Int32 x, Int32 y)

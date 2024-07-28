@@ -56,7 +56,7 @@ namespace BadBunnyGames.SnakeBun
 
 				if (DoesHeadCollideWithBody() || DoesHeadCollideWithWalls())
 				{
-					GD.Print("LOSE DUE TO COLLISION");
+					GetNode<Addons>("%Addons")._on_game_over();
 					return;
 				}
 

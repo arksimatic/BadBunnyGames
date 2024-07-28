@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba6e8rpntfxt6"]
+[gd_scene load_steps=4 format=3 uid="uid://ba6e8rpntfxt6"]
 
 [ext_resource type="PackedScene" uid="uid://bfv3mh4wojnb6" path="res://Scenes/gameover_popup.tscn" id="1_1lit2"]
+[ext_resource type="Script" path="res://Scripts/Addons.cs" id="1_ljs8q"]
 [ext_resource type="PackedScene" uid="uid://cvpelav7opi0f" path="res://Scenes/pause_popup.tscn" id="2_2lqb0"]
 
 [node name="Addons" type="CanvasLayer"]
+script = ExtResource("1_ljs8q")
 
 [node name="GameOver" parent="." instance=ExtResource("1_1lit2")]
 

@@ -13,33 +13,35 @@ namespace BadBunnyGames
 			if (Input.IsActionJustPressed(KeyCode.Esc) && Name == "Pause")
 			{
 				if(GetTree().Paused)
-				{
-					GetTree().Paused = false;
-					GetChild<PanelContainer>(0).Hide();
-				}
+					HidePopUp();
 				else
-				{
-					GetTree().Paused = true;
-					GetChild<PanelContainer>(0).Show();
-				}
+					ShowPopUp();
 			}
 		}
-
-		private void _on_back_pressed()
+		public void ShowPopUp()
+		{
+			GetTree().Paused = true;
+			GetChild<PanelContainer>(0).Show();
+		}
+		public void HidePopUp()
 		{
 			GetTree().Paused = false;
 			GetChild<PanelContainer>(0).Hide();
 		}
+		private void _on_back_pressed()
+		{
+			HidePopUp();
+		}
 
 		private void _on_restart_pressed()
 		{
-			GetTree().Paused = false;
+			HidePopUp();
 			GetTree().ReloadCurrentScene();
 		}
 
 		private void _on_menu_pressed()
 		{
-			GetTree().Paused = false;
+			HidePopUp();
 			GetTree().ChangeSceneToFile($"{GlobalPaths.MainMenu}/Scenes/main_scene.tscn");
 		}
 	}

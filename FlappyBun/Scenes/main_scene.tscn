@@ -148,5 +148,6 @@ scale = Vector2(100, 100)
 texture = ExtResource("5_kapu0")
 
 [node name="Addons" parent="." instance=ExtResource("9_tve5e")]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

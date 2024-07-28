@@ -177,3 +177,4 @@ texture = ExtResource("3_c7i7r")
 script = ExtResource("4_v2qab")
 
 [node name="Addons" parent="." instance=ExtResource("5_mrt4r")]
+unique_name_in_owner = true

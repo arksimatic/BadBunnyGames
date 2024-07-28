@@ -8,8 +8,8 @@ namespace BadBunnyGames.FlappyBun
 		{
 			if (body.Name == "Player")
 			{
-				GD.Print("Lose");
-				GetTree().ReloadCurrentScene();
+				// It's quite a bad practice, but I have no better idea to escape from "same-scene only" unique nodes
+				GetParent().GetNode<Addons>("%Addons")._on_game_over();
 			}
 		}
 	}

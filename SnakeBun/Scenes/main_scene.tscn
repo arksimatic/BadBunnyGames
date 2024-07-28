@@ -53,3 +53,4 @@ scale = Vector2(0.056, 0.056)
 texture = ExtResource("4_ei7yg")
 
 [node name="Addons" parent="." instance=ExtResource("4_71o5q")]
+unique_name_in_owner = true
