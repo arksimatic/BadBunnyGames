@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1w0pfjmgjq23"]
+
+[ext_resource type="PackedScene" uid="uid://vwh16rhjamfd" path="res://BunThree/Scenes/falling_tile.tscn" id="1_menl5"]
+[ext_resource type="Script" path="res://BunThree/Scripts/Tile.cs" id="2_flukq"]
+[ext_resource type="Texture2D" uid="uid://b2whtll78hq6e" path="res://BunThree/Graphics/snake-bun-body.png" id="4_ljcmn"]
+[ext_resource type="Texture2D" uid="uid://oacuhky8y3a8" path="res://BunThree/Graphics/snake-bun-legs.png" id="5_bprlt"]
+
+[node name="FallingTileI" instance=ExtResource("1_menl5")]
+
+[node name="Body" type="Node2D" parent="." index="1"]
+unique_name_in_owner = true
+position = Vector2(0, 16)
+script = ExtResource("2_flukq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Body" index="0"]
+texture = ExtResource("4_ljcmn")
+
+[node name="Legs" type="Node2D" parent="." index="2"]
+unique_name_in_owner = true
+position = Vector2(0, 32)
+script = ExtResource("2_flukq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Legs" index="0"]
+texture = ExtResource("5_bprlt")

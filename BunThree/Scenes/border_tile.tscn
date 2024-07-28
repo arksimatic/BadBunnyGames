@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2hify7igik8w"]
+
+[ext_resource type="Texture2D" uid="uid://d05o7qexuykm5" path="res://BunThree/Graphics/border.png" id="1_3blgu"]
+[ext_resource type="Script" path="res://BunThree/Scripts/Tile.cs" id="1_unxcj"]
+
+[node name="BorderTile" type="Node2D"]
+script = ExtResource("1_unxcj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3blgu")

@@ -94,6 +94,11 @@ layout_mode = 2
 text = "Boom Bun"
 script = ExtResource("1_4n7mr")
 
+[node name="BunThree" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bun Three"
+script = ExtResource("1_4n7mr")
+
 [node name="SpacerRight" type="Control" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -104,3 +109,4 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/SnakeBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/SnakeBun" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BunTower" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BunTower" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BoomBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BoomBun" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BunThree" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainer/BunThree" method="_on_pressed"]

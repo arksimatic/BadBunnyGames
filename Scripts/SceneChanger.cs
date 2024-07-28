@@ -20,6 +20,9 @@ namespace BadBunnyGames
 				case "BoomBun":
 					LoadBoomBun();
 					break;
+				case "BunThree":
+					LoadBunThree();
+					break;
 			}
 		}
 
@@ -38,6 +41,10 @@ namespace BadBunnyGames
 		private void LoadBoomBun()
 		{
 			GetTree().ChangeSceneToFile($"{GlobalPaths.BoomBun}/Scenes/main_scene.tscn");
+		}
+		private void LoadBunThree()
+		{
+			GetTree().ChangeSceneToFile($"{GlobalPaths.BunThree}/Scenes/main_scene.tscn");
 		}
 	}
 }

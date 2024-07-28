@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://vwh16rhjamfd"]
+
+[ext_resource type="Script" path="res://BunThree/Scripts/FallingTile.cs" id="1_fe7b5"]
+[ext_resource type="Script" path="res://BunThree/Scripts/Tile.cs" id="1_rsye4"]
+[ext_resource type="Texture2D" uid="uid://cee7spbjv18ko" path="res://SnakeBun/Graphics/snake-bun-head.png" id="2_gwtux"]
+
+[node name="FallingTile" type="Node2D"]
+script = ExtResource("1_fe7b5")
+
+[node name="Head" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_rsye4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Head"]
+texture = ExtResource("2_gwtux")

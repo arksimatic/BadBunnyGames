@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://q6elogwpgfgf"]
+
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="1_4hvpt"]
+[ext_resource type="Script" path="res://BunThree/Scripts/FallingTilesController.cs" id="1_b5rcp"]
+[ext_resource type="PackedScene" uid="uid://b1w0pfjmgjq23" path="res://BunThree/Scenes/falling_tile_I.tscn" id="2_2pt47"]
+[ext_resource type="PackedScene" uid="uid://leb0x3m616bh" path="res://BunThree/Scenes/falling_tile_L.tscn" id="3_calm5"]
+[ext_resource type="Script" path="res://BunThree/Scripts/FeltTilesController.cs" id="3_cy7rt"]
+[ext_resource type="Script" path="res://BunThree/Scripts/StaticTilesController.cs" id="3_keskn"]
+[ext_resource type="PackedScene" uid="uid://d2hify7igik8w" path="res://BunThree/Scenes/border_tile.tscn" id="4_wakvp"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="FallingTiles" type="Node2D" parent="Map"]
+script = ExtResource("1_b5rcp")
+SpawnPosition = Vector2(0, -80)
+FallingTileScenes = Array[PackedScene]([ExtResource("2_2pt47"), ExtResource("3_calm5")])
+
+[node name="FeltTiles" type="Node2D" parent="Map/FallingTiles"]
+unique_name_in_owner = true
+script = ExtResource("3_cy7rt")
+
+[node name="Timer" type="Timer" parent="Map/FallingTiles"]
+autostart = true
+
+[node name="Border" type="Node2D" parent="Map"]
+unique_name_in_owner = true
+script = ExtResource("3_keskn")
+
+[node name="BorderTile10" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, 80)
+
+[node name="BorderTile" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-48, 80)
+
+[node name="BorderTile2" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-32, 80)
+
+[node name="BorderTile3" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-16, 80)
+
+[node name="BorderTile4" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(0, 80)
+
+[node name="BorderTile5" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(16, 80)
+
+[node name="BorderTile6" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(32, 80)
+
+[node name="BorderTile7" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, 80)
+
+[node name="BorderTile9" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, 64)
+
+[node name="BorderTile8" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, 64)
+
+[node name="BorderTile11" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, 48)
+
+[node name="BorderTile12" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, 48)
+
+[node name="BorderTile13" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, 32)
+
+[node name="BorderTile14" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, 32)
+
+[node name="BorderTile15" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, 16)
+
+[node name="BorderTile16" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, 16)
+
+[node name="BorderTile17" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, 0)
+
+[node name="BorderTile18" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, 0)
+
+[node name="BorderTile19" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, -16)
+
+[node name="BorderTile20" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, -16)
+
+[node name="BorderTile21" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, -32)
+
+[node name="BorderTile22" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, -32)
+
+[node name="BorderTile23" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, -48)
+
+[node name="BorderTile24" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, -48)
+
+[node name="BorderTile27" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, -64)
+
+[node name="BorderTile28" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, -64)
+
+[node name="BorderTile25" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(-64, -80)
+
+[node name="BorderTile26" parent="Map/Border" instance=ExtResource("4_wakvp")]
+position = Vector2(48, -80)
+
+[node name="Addons" parent="." instance=ExtResource("1_4hvpt")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[connection signal="timeout" from="Map/FallingTiles/Timer" to="Map/FallingTiles" method="_on_timer_timeout"]

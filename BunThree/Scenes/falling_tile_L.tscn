@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://leb0x3m616bh"]
+
+[ext_resource type="PackedScene" uid="uid://vwh16rhjamfd" path="res://BunThree/Scenes/falling_tile.tscn" id="1_sjb4d"]
+[ext_resource type="Script" path="res://BunThree/Scripts/Tile.cs" id="2_lgniu"]
+[ext_resource type="Texture2D" uid="uid://c54r5668vq8x0" path="res://BunThree/Graphics/snake-bun-left.png" id="4_65si2"]
+[ext_resource type="Texture2D" uid="uid://oacuhky8y3a8" path="res://BunThree/Graphics/snake-bun-legs.png" id="5_g2rtv"]
+
+[node name="FallingTileL" instance=ExtResource("1_sjb4d")]
+Type = 1
+
+[node name="Body" type="Node2D" parent="." index="1"]
+unique_name_in_owner = true
+position = Vector2(0, 16)
+script = ExtResource("2_lgniu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Body" index="0"]
+rotation = 1.5708
+texture = ExtResource("4_65si2")
+
+[node name="Legs" type="Node2D" parent="." index="2"]
+unique_name_in_owner = true
+position = Vector2(-16, 16)
+script = ExtResource("2_lgniu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Legs" index="0"]
+rotation = 1.5708
+texture = ExtResource("5_g2rtv")
