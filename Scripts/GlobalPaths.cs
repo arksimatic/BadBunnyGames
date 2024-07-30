@@ -9,6 +9,7 @@ namespace BadBunnyGames
 		public static readonly String BunTower = "res://BunTower";
 		public static readonly String BoomBun = "res://BoomBun";
 		public static readonly String BunThree = "res://BunThree";
+		public static readonly String BunInvaders = "res://BunInvaders";
 		public static readonly String MainMenu = "res:/";
 	}
 }

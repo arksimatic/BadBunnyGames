@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://bf0eo4r4b1hk6"]
+
+[ext_resource type="Texture2D" uid="uid://ct08n8yoxt7f1" path="res://BunInvaders/Graphics/mid-sized-bun.png" id="1_eq8cl"]
+[ext_resource type="Script" path="res://BunInvaders/Scripts/Player.cs" id="1_r5m3v"]
+[ext_resource type="PackedScene" uid="uid://cnvg2tmqjy65p" path="res://BunInvaders/Scenes/projectile_player.tscn" id="2_rhuar"]
+[ext_resource type="Script" path="res://BunInvaders/Scripts/InvadersSpawner.cs" id="2_s3tbw"]
+[ext_resource type="PackedScene" uid="uid://cmtupb0si83yg" path="res://BunInvaders/Scenes/invader.tscn" id="5_olk4f"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="6_t0j6w"]
+[ext_resource type="Texture2D" uid="uid://b7sbsglnwjefc" path="res://BunInvaders/Graphics/background-with-stars.png" id="7_gt8d7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdmwl"]
+size = Vector2(14, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38i1s"]
+size = Vector2(16, 30)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ydqst"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_arvo6"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cq4iq"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k43sk"]
+a = Vector2(0, -200)
+b = Vector2(0, 200)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bjp4r"]
+a = Vector2(0, -200)
+b = Vector2(0, 200)
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("7_gt8d7")
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("ProjectilesNode") groups=["player"]]
+position = Vector2(0, 105)
+script = ExtResource("1_r5m3v")
+Projectile = ExtResource("2_rhuar")
+ProjectilesNode = NodePath("../Projectiles")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_eq8cl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_rdmwl")
+
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_38i1s")
+
+[node name="Invaders" type="Node2D" parent="." node_paths=PackedStringArray("ProjectilesNode")]
+position = Vector2(0, -100)
+script = ExtResource("2_s3tbw")
+InvaderScene = ExtResource("5_olk4f")
+ProjectilesNode = NodePath("../Projectiles")
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -1)
+zoom = Vector2(2.5, 2.5)
+
+[node name="ProjectileDestructor" type="Area2D" parent="." groups=["projectile_destructor"]]
+position = Vector2(0, -150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDestructor"]
+shape = SubResource("WorldBoundaryShape2D_ydqst")
+
+[node name="GameBorders" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="GameBorders"]
+position = Vector2(-235, 0)
+shape = SubResource("WorldBoundaryShape2D_arvo6")
+
+[node name="Right" type="CollisionShape2D" parent="GameBorders"]
+position = Vector2(235, 0)
+shape = SubResource("WorldBoundaryShape2D_cq4iq")
+
+[node name="LeftArea" type="Area2D" parent="GameBorders" groups=["border_left"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameBorders/LeftArea"]
+position = Vector2(-230, 0)
+shape = SubResource("SegmentShape2D_k43sk")
+
+[node name="RightArea" type="Area2D" parent="GameBorders" groups=["border_right"]]
+position = Vector2(230, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameBorders/RightArea"]
+shape = SubResource("SegmentShape2D_bjp4r")
+
+[node name="Addons" parent="." instance=ExtResource("6_t0j6w")]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]

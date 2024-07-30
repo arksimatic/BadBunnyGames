@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnvg2tmqjy65p"]
+
+[ext_resource type="PackedScene" uid="uid://sbn24qjoytld" path="res://BunInvaders/Scenes/projectile.tscn" id="1_m18yd"]
+
+[node name="Projectile" instance=ExtResource("1_m18yd")]
+TagsToDamage = PackedStringArray("enemy", "projectile")
+Direction = Vector2(0, -1)

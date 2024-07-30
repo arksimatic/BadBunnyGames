@@ -11,5 +11,14 @@ namespace BadBunnyGames
             image.Resize(width, height);
             return ImageTexture.CreateFromImage(image);
         }
+        public static Boolean IsInAnyGroup(this Node2D node, String[] groups)
+        {
+            foreach (var group in groups)
+            {
+                if (node.IsInGroup(group))
+                    return true;
+            }
+            return false;
+        }
     }
 }

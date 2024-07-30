@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ckmn2xqcd1t"]
+
+[ext_resource type="PackedScene" uid="uid://sbn24qjoytld" path="res://BunInvaders/Scenes/projectile.tscn" id="1_7g4oa"]
+[ext_resource type="Texture2D" uid="uid://bpn7r7asssng2" path="res://BunInvaders/Graphics/carrot-projectile-dark.png" id="2_nhoas"]
+
+[node name="Projectile" instance=ExtResource("1_7g4oa")]
+Speed = 50.0
+TagsToDamage = PackedStringArray("player", "projectile")
+Direction = Vector2(0, 1)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_nhoas")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, 1.5)
