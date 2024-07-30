@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://nvmauglv5nbo"]
+
+[ext_resource type="PackedScene" uid="uid://by8m8ngg0ceds" path="res://BunPong/Scenes/platform.tscn" id="1_7q8uk"]
+[ext_resource type="Texture2D" uid="uid://c8pkgpmmvs7in" path="res://BunPong/Graphics/background-bun-pong.png" id="1_54xff"]
+[ext_resource type="Script" path="res://BunPong/Scripts/Ball.cs" id="2_pud5i"]
+[ext_resource type="Texture2D" uid="uid://cs5kos6hg4qlw" path="res://BunPong/Graphics/ball.png" id="2_yotrw"]
+[ext_resource type="Script" path="res://BunPong/Scripts/ScoreArea.cs" id="4_m6e1e"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="5_va62w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mktlk"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0yfm"]
+size = Vector2(460, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3uwk"]
+size = Vector2(20, 296.25)
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_54xff")
+
+[node name="PlatformLeft" parent="." instance=ExtResource("1_7q8uk")]
+position = Vector2(-220, 0)
+KeyCodeUp = "Up"
+KeyCodeDown = "Down"
+
+[node name="PlatformRight" parent="." instance=ExtResource("1_7q8uk")]
+position = Vector2(220, 0)
+KeyCodeUp = "Right"
+KeyCodeDown = "Left"
+
+[node name="Ball" type="CharacterBody2D" parent="." groups=["ball"]]
+position = Vector2(-196, 8)
+script = ExtResource("2_pud5i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+texture = ExtResource("2_yotrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("RectangleShape2D_mktlk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Borders" type="StaticBody2D" parent="." groups=["border"]]
+
+[node name="CollisionShapeTop" type="CollisionShape2D" parent="Borders"]
+position = Vector2(0, -140)
+shape = SubResource("RectangleShape2D_o0yfm")
+
+[node name="CollisionShapeDown" type="CollisionShape2D" parent="Borders"]
+position = Vector2(0, 140)
+shape = SubResource("RectangleShape2D_o0yfm")
+
+[node name="ScoreArea" type="Area2D" parent="."]
+script = ExtResource("4_m6e1e")
+
+[node name="Left" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(-240, 0)
+shape = SubResource("RectangleShape2D_a3uwk")
+
+[node name="Right" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(240, 0)
+shape = SubResource("RectangleShape2D_a3uwk")
+
+[node name="Addons" parent="." instance=ExtResource("5_va62w")]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]

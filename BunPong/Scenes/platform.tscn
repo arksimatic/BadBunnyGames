@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://by8m8ngg0ceds"]
+
+[ext_resource type="Script" path="res://BunPong/Scripts/Platform.cs" id="1_nwisx"]
+[ext_resource type="Texture2D" uid="uid://c0pwwhy4fqvmd" path="res://BunPong/Graphics/mid-sized-bun.png" id="2_fdg51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uboj0"]
+size = Vector2(14, 30)
+
+[node name="Platform" type="StaticBody2D" groups=["platform"]]
+script = ExtResource("1_nwisx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fdg51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_uboj0")
