@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 namespace BadBunnyGames
 {
@@ -6,59 +7,38 @@ namespace BadBunnyGames
 	{
 		private void _on_pressed()
 		{
+			String pathToScene;
+
 			switch (Name)
 			{
 				case "FlappyBun":
-					LoadFlappyBun();
+					pathToScene = GlobalPaths.FlappyBun;
 					break;
 				case "SnakeBun":
-					LoadSnakeBun();
+					pathToScene = GlobalPaths.SnakeBun;
 					break;
 				case "BunTower":
-					LoadBunTower();
+					pathToScene = GlobalPaths.BunTower;
 					break;
 				case "BoomBun":
-					LoadBoomBun();
+					pathToScene = GlobalPaths.BoomBun;
 					break;
 				case "BunThree":
-					LoadBunThree();
+					pathToScene = GlobalPaths.BunThree;
 					break;
 				case "BunInvaders":
-					LoadBunInvaders();
+					pathToScene = GlobalPaths.BunInvaders;
 					break;
 				case "BunPong":
-					LoadBunPong();
+					pathToScene = GlobalPaths.BunPong;
+					break;
+				default:
+					pathToScene = null;
 					break;
 			}
-		}
 
-		private void LoadFlappyBun()
-		{
-			GetTree().ChangeSceneToFile($"{GlobalPaths.FlappyBun}/Scenes/main_scene.tscn");
-		}
-		private void LoadSnakeBun()
-		{
-			GetTree().ChangeSceneToFile($"{GlobalPaths.SnakeBun}/Scenes/main_scene.tscn");
-		}
-		private void LoadBunTower()
-		{
-			GetTree().ChangeSceneToFile($"{GlobalPaths.BunTower}/Scenes/main_scene.tscn");
-		}
-		private void LoadBoomBun()
-		{
-			GetTree().ChangeSceneToFile($"{GlobalPaths.BoomBun}/Scenes/main_scene.tscn");
-		}
-		private void LoadBunThree()
-		{
-			GetTree().ChangeSceneToFile($"{GlobalPaths.BunThree}/Scenes/main_scene.tscn");
-		}
-		private void LoadBunInvaders()
-		{
-			GetTree().ChangeSceneToFile($"{GlobalPaths.BunInvaders}/Scenes/main_scene.tscn");
-		}
-		private void LoadBunPong()
-		{
-			GetTree().ChangeSceneToFile($"{GlobalPaths.BunPong}/Scenes/main_scene.tscn");
+			if (pathToScene != null)
+				GetTree().ChangeSceneToFile($"{pathToScene}/Scenes/main_scene.tscn");
 		}
 	}
 }
