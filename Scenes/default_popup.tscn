@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://wvshg5spv4k4"]
 
 [ext_resource type="Script" path="res://Scripts/DefaultPopUpController.cs" id="1_pip4n"]
-[ext_resource type="Theme" uid="uid://k43khfa7qlr4" path="res://esc_controller_theme.tres" id="2_q3t3w"]
+[ext_resource type="Theme" uid="uid://k43khfa7qlr4" path="res://popup_theme.tres" id="2_vfssc"]
 
 [node name="PopUpController" type="CanvasLayer"]
 script = ExtResource("1_pip4n")
@@ -19,7 +19,7 @@ offset_right = 157.5
 offset_bottom = 131.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_q3t3w")
+theme = ExtResource("2_vfssc")
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer"]
 layout_mode = 2
