@@ -11,19 +11,15 @@ namespace BadBunnyGames.FlappyBun
 		private Single _spacing = 50;
 		private Random _random;
 		private CharacterBody2D _player;
-		private PackedScene _woodScene;
+		[Export] public PackedScene WoodScene;
 		private List<Node2D> _woods = new List<Node2D>();
 		public override void _Ready()
 		{
 			_player = GetNode<CharacterBody2D>("%Player");
-
 			_random = new Random();
-			_woodScene = GD.Load<PackedScene>($"{GlobalPaths.FlappyBun}/Scenes/wood.tscn");
 
 			for (int i = 0; i < _initialWoodCount; i++)
-			{
 				SpawnNextWood();
-			}
 		}
 		public override void _Process(double delta)
 		{
@@ -41,7 +37,7 @@ namespace BadBunnyGames.FlappyBun
 		}
 		private void SpawnNextWood()
 		{
-			var wood = _woodScene.Instantiate() as Node2D;
+			var wood = WoodScene.Instantiate() as Node2D;
 			var shiftY = _random.Next(-50, 50);
 			wood.Position = new Vector2(GetNextX(), shiftY);
 			wood.Name = $"Wood{_woods.Count}";
