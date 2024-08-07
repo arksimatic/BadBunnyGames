@@ -7,6 +7,12 @@ namespace BadBunnyGames.SnakeBun
 {
 	public partial class Player : Node2D
 	{
+		[Export] public Texture2D HeadTexture;
+		[Export] public Texture2D BodyTexture;
+		[Export] public Texture2D BodyLeftTexture;
+		[Export] public Texture2D BodyRightTexture;
+		[Export] public Texture2D LegsTexture;
+
 		private Node2D _bunBody;
 		private Sprite2D[] _bodyChilds;
 		private Sprite2D _head => _bodyChilds.First();
@@ -16,23 +22,11 @@ namespace BadBunnyGames.SnakeBun
 		private Single _movesPerSecond => 1 / Statics.Speed;
 		private Vector2 _moveDirection = new Vector2(1, 0);
 
-		private Texture2D _headTexture;
-		private Texture2D _bodyTexture;
-		private Texture2D _bodyLeftTexture;
-		private Texture2D _bodyRightTexture;
-		private Texture2D _legsTexture;
-
 		private Sprite2D _food;
 		private Single _eightyShift = 80;
 		private Single _eightShift = 8;
 		public override void _Ready()
 		{
-			_headTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.SnakeBun}/Graphics/snake-bun-head.png");
-			_bodyTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.SnakeBun}/Graphics/snake-bun-body.png");
-			_bodyLeftTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.SnakeBun}/Graphics/snake-bun-left.png");
-			_bodyRightTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.SnakeBun}/Graphics/snake-bun-right.png");
-			_legsTexture = (Texture2D)ResourceLoader.Load($"{GlobalPaths.SnakeBun}/Graphics/snake-bun-legs.png");
-
 			_bunBody = GetNode<Node2D>("Body");
 			_food = GetNode<Sprite2D>("%Food");
 		}
@@ -87,7 +81,7 @@ namespace BadBunnyGames.SnakeBun
 		{
 			Sprite2D legs = _bodyChilds.Last();
 			Sprite2D newBodyPart = new Sprite2D();
-			newBodyPart.Texture = _bodyTexture;
+			newBodyPart.Texture = BodyTexture;
 			newBodyPart.Position = legs.Position;
 			newBodyPart.RotationDegrees = legs.RotationDegrees;
 			_bunBody.RemoveChild(legs);
@@ -118,11 +112,11 @@ namespace BadBunnyGames.SnakeBun
 						twoBeforeDegrees = 360;
 
 					if (oneBeforeDegrees > twoBeforeDegrees)
-						_bodyChilds[i].Texture = _bodyLeftTexture;
+						_bodyChilds[i].Texture = BodyLeftTexture;
 					else if (oneBeforeDegrees < twoBeforeDegrees)
-						_bodyChilds[i].Texture = _bodyRightTexture;
+						_bodyChilds[i].Texture = BodyRightTexture;
 					else
-						_bodyChilds[i].Texture = _bodyTexture;
+						_bodyChilds[i].Texture = BodyTexture;
 				}
 
 				_bodyChilds[i].Position = _bodyChilds[i - 1].Position;
@@ -140,12 +134,12 @@ namespace BadBunnyGames.SnakeBun
 			else
 			{
 				// legs
-				_bodyChilds[_bodyChilds.Length - 1].Texture = _legsTexture;
+				_bodyChilds[_bodyChilds.Length - 1].Texture = LegsTexture;
 				_bodyChilds[_bodyChilds.Length - 1].RotationDegrees = _bodyChilds[_bodyChilds.Length - 2].RotationDegrees;
 			}
 
 			// head
-			_bodyChilds[0].Texture = _headTexture;
+			_bodyChilds[0].Texture = HeadTexture;
 			_bodyChilds[0].Position = CalculateNewHeadPosition();
 			_bodyChilds[0].RotationDegrees = Helper.GetDegreesFromVector(_moveDirection);
 
