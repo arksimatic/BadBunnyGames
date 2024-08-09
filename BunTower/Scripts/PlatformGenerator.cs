@@ -6,7 +6,7 @@ namespace BadBunnyGames.BunTower
 {
 	public partial class PlatformGenerator : Node2D
 	{
-		private PackedScene _platformScene;
+		[Export] public PackedScene PlatformScene;
 		private Random _random;
 		private List<Node2D> _platforms = new List<Node2D>();
 		private Single _lastPlatformY = 0;
@@ -15,7 +15,6 @@ namespace BadBunnyGames.BunTower
 		{
 			_player = GetNode<CharacterBody2D>("%Player");
 			_random = new Random();
-			_platformScene = GD.Load<PackedScene>($"{GlobalPaths.BunTower}/Scenes/platform.tscn");
 		}
 		public override void _Process(double delta)
 		{
@@ -25,14 +24,14 @@ namespace BadBunnyGames.BunTower
 
 		public void GeneratePlatform(Vector2 position)
 		{
-			Node2D platform = _platformScene.Instantiate() as Node2D;
+			Node2D platform = PlatformScene.Instantiate() as Node2D;
 			platform.Position = position;
 			AddChild(platform);
 		}
 
 		private void SpawnNextPlatform()
 		{
-			var platform = _platformScene.Instantiate() as Node2D;
+			var platform = PlatformScene.Instantiate() as Node2D;
 			var posX = _random.Next(-175, 175);
 			platform.Position = new Vector2(posX, _lastPlatformY);
 			_lastPlatformY -= 50;

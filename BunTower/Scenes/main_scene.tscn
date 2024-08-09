@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://dr3n723ieidkk"]
+[gd_scene load_steps=26 format=3 uid="uid://dr3n723ieidkk"]
 
 [ext_resource type="Script" path="res://BunTower/Scripts/Player.cs" id="1_5vyyw"]
 [ext_resource type="Texture2D" uid="uid://ibo6mr40yp4m" path="res://BunTower/Jumping_Rabbit.png" id="2_40hbr"]
 [ext_resource type="Texture2D" uid="uid://bol58sgdx6yqo" path="res://icon.svg" id="3_c7i7r"]
 [ext_resource type="Script" path="res://BunTower/Scripts/PlatformGenerator.cs" id="4_v2qab"]
 [ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="5_mrt4r"]
+[ext_resource type="PackedScene" uid="uid://bx7ij3nryqf5m" path="res://BunTower/Scenes/platform.tscn" id="5_y2k17"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37b3l"]
 atlas = ExtResource("2_40hbr")
@@ -175,6 +176,7 @@ texture = ExtResource("3_c7i7r")
 
 [node name="Platforms" type="Node2D" parent="."]
 script = ExtResource("4_v2qab")
+PlatformScene = ExtResource("5_y2k17")
 
 [node name="Addons" parent="." instance=ExtResource("5_mrt4r")]
 unique_name_in_owner = true
