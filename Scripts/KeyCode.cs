@@ -9,7 +9,6 @@ namespace BadBunnyGames
         public static readonly String Left = "Left";
         public static readonly String Down = "Down";
         public static readonly String Right = "Right";
-
         public static readonly String Esc = "Esc";
     }
 }
