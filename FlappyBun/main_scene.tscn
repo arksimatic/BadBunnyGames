@@ -1,42 +1,42 @@
 [gd_scene load_steps=22 format=3 uid="uid://dw6b6xnvpgjrj"]
 
-[ext_resource type="Script" path="res://FlappyBun/Scripts/Score.cs" id="1_llq04"]
-[ext_resource type="Script" path="res://FlappyBun/Scripts/PlayerMovement.cs" id="2_6vqti"]
-[ext_resource type="Texture2D" uid="uid://ctkwm7t4jlg0g" path="res://FlappyBun/Graphics/Carrot.png" id="2_yyvik"]
-[ext_resource type="Script" path="res://FlappyBun/Scripts/WoodGenerator.cs" id="4_1j03l"]
-[ext_resource type="Texture2D" uid="uid://cp35xuqaxntxp" path="res://FlappyBun/Graphics/Jumping_Rabbit.png" id="4_4kwo2"]
-[ext_resource type="PackedScene" uid="uid://dqksefg4gk8xa" path="res://FlappyBun/Scenes/wood.tscn" id="4_ea6jr"]
-[ext_resource type="Texture2D" uid="uid://cc8hr55uk2xdc" path="res://FlappyBun/Graphics/background.png" id="5_kapu0"]
-[ext_resource type="Script" path="res://FlappyBun/Scripts/Killzone.cs" id="6_8tdmu"]
-[ext_resource type="Script" path="res://FlappyBun/Scripts/TimeFreezer.cs" id="8_wp6bf"]
-[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="9_tve5e"]
+[ext_resource type="Script" path="res://FlappyBun/Scripts/Score.cs" id="1_m2p6g"]
+[ext_resource type="Texture2D" uid="uid://ctkwm7t4jlg0g" path="res://FlappyBun/Graphics/Carrot.png" id="2_jwllc"]
+[ext_resource type="Script" path="res://FlappyBun/Scripts/WoodGenerator.cs" id="3_juqsn"]
+[ext_resource type="PackedScene" uid="uid://dqksefg4gk8xa" path="res://FlappyBun/Scenes/wood.tscn" id="4_nvn1e"]
+[ext_resource type="Script" path="res://FlappyBun/Scripts/PlayerMovement.cs" id="5_36gak"]
+[ext_resource type="Texture2D" uid="uid://cp35xuqaxntxp" path="res://FlappyBun/Graphics/Jumping_Rabbit.png" id="6_hy08p"]
+[ext_resource type="Script" path="res://FlappyBun/Scripts/Killzone.cs" id="7_n8wib"]
+[ext_resource type="Script" path="res://FlappyBun/Scripts/TimeFreezer.cs" id="8_8rn66"]
+[ext_resource type="Texture2D" uid="uid://cc8hr55uk2xdc" path="res://FlappyBun/Graphics/background.png" id="9_r0e1d"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="10_7tniv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tnsay"]
-atlas = ExtResource("4_4kwo2")
+atlas = ExtResource("6_hy08p")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65ykp"]
-atlas = ExtResource("4_4kwo2")
+atlas = ExtResource("6_hy08p")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xswl"]
-atlas = ExtResource("4_4kwo2")
+atlas = ExtResource("6_hy08p")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_amhnr"]
-atlas = ExtResource("4_4kwo2")
+atlas = ExtResource("6_hy08p")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3ab4"]
-atlas = ExtResource("4_4kwo2")
+atlas = ExtResource("6_hy08p")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cedbi"]
-atlas = ExtResource("4_4kwo2")
+atlas = ExtResource("6_hy08p")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgk7c"]
-atlas = ExtResource("4_4kwo2")
+atlas = ExtResource("6_hy08p")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ck1jg"]
@@ -91,22 +91,22 @@ offset_right = 269.0
 offset_bottom = 91.0
 theme_override_font_sizes/font_size = 48
 text = "SCORE"
-script = ExtResource("1_llq04")
+script = ExtResource("1_m2p6g")
 
 [node name="Carrot" type="Sprite2D" parent="UI"]
 position = Vector2(48, 72)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_yyvik")
+texture = ExtResource("2_jwllc")
 
 [node name="Woods" type="Node2D" parent="."]
-script = ExtResource("4_1j03l")
-WoodScene = ExtResource("4_ea6jr")
+script = ExtResource("3_juqsn")
+WoodScene = ExtResource("4_nvn1e")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-50, 0)
 collision_mask = 3
-script = ExtResource("2_6vqti")
+script = ExtResource("5_36gak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_ck1jg")
@@ -127,7 +127,7 @@ scale = Vector2(0.124226, 0.106322)
 texture = SubResource("CompressedTexture2D_3qpbk")
 
 [node name="Killzone" type="Area2D" parent="."]
-script = ExtResource("6_8tdmu")
+script = ExtResource("7_n8wib")
 
 [node name="CollisionShapeDown" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, -100)
@@ -139,7 +139,7 @@ position = Vector2(0, 100)
 shape = SubResource("WorldBoundaryShape2D_qswyy")
 
 [node name="TimeFreezer" type="Node2D" parent="."]
-script = ExtResource("8_wp6bf")
+script = ExtResource("8_8rn66")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -147,9 +147,9 @@ layer = -1
 [node name="Background" type="Sprite2D" parent="Background"]
 position = Vector2(798, 798)
 scale = Vector2(100, 100)
-texture = ExtResource("5_kapu0")
+texture = ExtResource("9_r0e1d")
 
-[node name="Addons" parent="." instance=ExtResource("9_tve5e")]
+[node name="Addons" parent="." instance=ExtResource("10_7tniv")]
 unique_name_in_owner = true
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

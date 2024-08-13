@@ -42,7 +42,7 @@ namespace BadBunnyGames
 		private void _on_menu_pressed()
 		{
 			HidePopUp();
-			GetTree().ChangeSceneToFile($"{GlobalPaths.MainMenu}/Scenes/main_scene.tscn");
+			GetTree().ChangeSceneToFile($"{GlobalPaths.MainMenu}/main_scene.tscn");
 		}
 	}
 }

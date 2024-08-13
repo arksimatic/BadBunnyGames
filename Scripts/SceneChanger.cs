@@ -38,7 +38,7 @@ namespace BadBunnyGames
 			}
 
 			if (pathToScene != null)
-				GetTree().ChangeSceneToFile($"{pathToScene}/Scenes/main_scene.tscn");
+				GetTree().ChangeSceneToFile($"{pathToScene}/main_scene.tscn");
 		}
 	}
 }

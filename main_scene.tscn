@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://mtyi883jj51l"]
 
-[ext_resource type="Script" path="res://Scripts/SceneChanger.cs" id="1_4n7mr"]
-[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="1_khrgs"]
-[ext_resource type="Theme" uid="uid://cslbanmlp38gl" path="res://main_menu_theme.tres" id="1_pt276"]
-[ext_resource type="Texture2D" uid="uid://chr021wnqqgp8" path="res://white-bun.png" id="2_6slqi"]
+[ext_resource type="Theme" uid="uid://cslbanmlp38gl" path="res://main_menu_theme.tres" id="1_xjf17"]
+[ext_resource type="Texture2D" uid="uid://chr021wnqqgp8" path="res://white-bun.png" id="2_0qiaa"]
+[ext_resource type="Script" path="res://Scripts/SceneChanger.cs" id="3_q1csy"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="4_lmf5a"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_pt276")
+theme = ExtResource("1_xjf17")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
@@ -54,7 +54,7 @@ size_flags_vertical = 3
 [node name="TextureRectBunny" type="TextureRect" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerTitle/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("2_6slqi")
+texture = ExtResource("2_0qiaa")
 stretch_mode = 2
 
 [node name="SpacerDown" type="Control" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerTitle/HBoxContainer/VBoxContainer"]
@@ -76,22 +76,22 @@ theme_override_constants/separation = 25
 [node name="FlappyBun" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerLeft"]
 layout_mode = 2
 text = "Flappy Bun"
-script = ExtResource("1_4n7mr")
+script = ExtResource("3_q1csy")
 
 [node name="SnakeBun" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerLeft"]
 layout_mode = 2
 text = "Snake Bun"
-script = ExtResource("1_4n7mr")
+script = ExtResource("3_q1csy")
 
 [node name="BunTower" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerLeft"]
 layout_mode = 2
 text = "Bun Tower"
-script = ExtResource("1_4n7mr")
+script = ExtResource("3_q1csy")
 
 [node name="BoomBun" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerLeft"]
 layout_mode = 2
 text = "Boom Bun"
-script = ExtResource("1_4n7mr")
+script = ExtResource("3_q1csy")
 
 [node name="SpacerMiddle" type="Control" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer"]
 layout_mode = 2
@@ -106,19 +106,19 @@ theme_override_constants/separation = 25
 [node name="BunThree" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerRight"]
 layout_mode = 2
 text = "Bun Three"
-script = ExtResource("1_4n7mr")
+script = ExtResource("3_q1csy")
 
 [node name="BunInvaders" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerRight"]
 layout_mode = 2
 text = "Bun Invaders
 "
-script = ExtResource("1_4n7mr")
+script = ExtResource("3_q1csy")
 
 [node name="BunPong" type="Button" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerRight"]
 layout_mode = 2
 text = "Bun Pong
 "
-script = ExtResource("1_4n7mr")
+script = ExtResource("3_q1csy")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames"]
 layout_mode = 2
@@ -126,7 +126,7 @@ layout_mode = 2
 [node name="Control" type="Control" parent="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Addons" parent="." instance=ExtResource("1_khrgs")]
+[node name="Addons" parent="." instance=ExtResource("4_lmf5a")]
 
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerLeft/FlappyBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerLeft/FlappyBun" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerLeft/SnakeBun" to="CanvasLayer/PanelContainer/CenterContainer/VBoxContainer/VBoxContainerGames/HBoxContainer/VBoxContainerLeft/SnakeBun" method="_on_pressed"]

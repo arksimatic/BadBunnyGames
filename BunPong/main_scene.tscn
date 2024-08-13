@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://nvmauglv5nbo"]
 
-[ext_resource type="PackedScene" uid="uid://by8m8ngg0ceds" path="res://BunPong/Scenes/platform.tscn" id="1_7q8uk"]
-[ext_resource type="Texture2D" uid="uid://c8pkgpmmvs7in" path="res://BunPong/Graphics/background-bun-pong.png" id="1_54xff"]
-[ext_resource type="Script" path="res://BunPong/Scripts/Ball.cs" id="2_pud5i"]
-[ext_resource type="Texture2D" uid="uid://cs5kos6hg4qlw" path="res://BunPong/Graphics/ball.png" id="2_yotrw"]
-[ext_resource type="Script" path="res://BunPong/Scripts/ScoreArea.cs" id="4_m6e1e"]
-[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="5_va62w"]
+[ext_resource type="Texture2D" uid="uid://c8pkgpmmvs7in" path="res://BunPong/Graphics/background-bun-pong.png" id="1_yua52"]
+[ext_resource type="PackedScene" uid="uid://by8m8ngg0ceds" path="res://BunPong/Scenes/platform.tscn" id="2_gk5mh"]
+[ext_resource type="Script" path="res://BunPong/Scripts/Ball.cs" id="3_v8dbb"]
+[ext_resource type="Texture2D" uid="uid://cs5kos6hg4qlw" path="res://BunPong/Graphics/ball.png" id="4_diiay"]
+[ext_resource type="Script" path="res://BunPong/Scripts/ScoreArea.cs" id="5_cd8pg"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="6_lv5vi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mktlk"]
 size = Vector2(2, 2)
@@ -19,24 +19,24 @@ size = Vector2(20, 296.25)
 [node name="MainScene" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_54xff")
+texture = ExtResource("1_yua52")
 
-[node name="PlatformLeft" parent="." instance=ExtResource("1_7q8uk")]
+[node name="PlatformLeft" parent="." instance=ExtResource("2_gk5mh")]
 position = Vector2(-220, 0)
 KeyCodeUp = "Up"
 KeyCodeDown = "Down"
 
-[node name="PlatformRight" parent="." instance=ExtResource("1_7q8uk")]
+[node name="PlatformRight" parent="." instance=ExtResource("2_gk5mh")]
 position = Vector2(220, 0)
 KeyCodeUp = "Right"
 KeyCodeDown = "Left"
 
 [node name="Ball" type="CharacterBody2D" parent="." groups=["ball"]]
 position = Vector2(-196, 8)
-script = ExtResource("2_pud5i")
+script = ExtResource("3_v8dbb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
-texture = ExtResource("2_yotrw")
+texture = ExtResource("4_diiay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("RectangleShape2D_mktlk")
@@ -55,7 +55,7 @@ position = Vector2(0, 140)
 shape = SubResource("RectangleShape2D_o0yfm")
 
 [node name="ScoreArea" type="Area2D" parent="."]
-script = ExtResource("4_m6e1e")
+script = ExtResource("5_cd8pg")
 
 [node name="Left" type="CollisionShape2D" parent="ScoreArea"]
 position = Vector2(-240, 0)
@@ -65,7 +65,7 @@ shape = SubResource("RectangleShape2D_a3uwk")
 position = Vector2(240, 0)
 shape = SubResource("RectangleShape2D_a3uwk")
 
-[node name="Addons" parent="." instance=ExtResource("5_va62w")]
+[node name="Addons" parent="." instance=ExtResource("6_lv5vi")]
 unique_name_in_owner = true
 
 [connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]

@@ -1,66 +1,66 @@
 [gd_scene load_steps=26 format=3 uid="uid://dr3n723ieidkk"]
 
-[ext_resource type="Script" path="res://BunTower/Scripts/Player.cs" id="1_5vyyw"]
-[ext_resource type="Texture2D" uid="uid://ibo6mr40yp4m" path="res://BunTower/Jumping_Rabbit.png" id="2_40hbr"]
-[ext_resource type="Texture2D" uid="uid://bol58sgdx6yqo" path="res://icon.svg" id="3_c7i7r"]
-[ext_resource type="Script" path="res://BunTower/Scripts/PlatformGenerator.cs" id="4_v2qab"]
-[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="5_mrt4r"]
-[ext_resource type="PackedScene" uid="uid://bx7ij3nryqf5m" path="res://BunTower/Scenes/platform.tscn" id="5_y2k17"]
+[ext_resource type="Script" path="res://BunTower/Scripts/Player.cs" id="1_1rm58"]
+[ext_resource type="Texture2D" uid="uid://ibo6mr40yp4m" path="res://BunTower/Jumping_Rabbit.png" id="2_7eh4h"]
+[ext_resource type="Texture2D" uid="uid://bol58sgdx6yqo" path="res://icon.svg" id="3_gv1qj"]
+[ext_resource type="Script" path="res://BunTower/Scripts/PlatformGenerator.cs" id="4_axeuc"]
+[ext_resource type="PackedScene" uid="uid://bx7ij3nryqf5m" path="res://BunTower/Scenes/platform.tscn" id="5_mus55"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="6_e18uh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37b3l"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ho2aw"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wej8n"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg1nq"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhnf8"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2jold"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwgci"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v71ag"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcdcr"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5x42m"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs2o1"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nojmq"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5b2au"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evyp4"]
-atlas = ExtResource("2_40hbr")
+atlas = ExtResource("2_7eh4h")
 region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_754td"]
@@ -130,7 +130,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_5vyyw")
+script = ExtResource("1_1rm58")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -153,7 +153,7 @@ shape = SubResource("WorldBoundaryShape2D_iwfpm")
 
 [node name="Sprite2D" type="Sprite2D" parent="Borders/StaticBody2D/CollisionShape2D"]
 scale = Vector2(100000, 0.01)
-texture = ExtResource("3_c7i7r")
+texture = ExtResource("3_gv1qj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D"]
 position = Vector2(-250, 0)
@@ -162,7 +162,7 @@ shape = SubResource("WorldBoundaryShape2D_ejaug")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Borders/StaticBody2D/CollisionShape2D2"]
 scale = Vector2(10000, 0.01)
-texture = ExtResource("3_c7i7r")
+texture = ExtResource("3_gv1qj")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D"]
 position = Vector2(250, 0)
@@ -172,11 +172,11 @@ shape = SubResource("WorldBoundaryShape2D_lq0n4")
 [node name="Sprite2D2" type="Sprite2D" parent="Borders/StaticBody2D/CollisionShape2D3"]
 rotation = -3.14159
 scale = Vector2(10000, 0.01)
-texture = ExtResource("3_c7i7r")
+texture = ExtResource("3_gv1qj")
 
 [node name="Platforms" type="Node2D" parent="."]
-script = ExtResource("4_v2qab")
-PlatformScene = ExtResource("5_y2k17")
+script = ExtResource("4_axeuc")
+PlatformScene = ExtResource("5_mus55")
 
-[node name="Addons" parent="." instance=ExtResource("5_mrt4r")]
+[node name="Addons" parent="." instance=ExtResource("6_e18uh")]
 unique_name_in_owner = true

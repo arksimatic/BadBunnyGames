@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://bf0eo4r4b1hk6"]
 
-[ext_resource type="Texture2D" uid="uid://ct08n8yoxt7f1" path="res://BunInvaders/Graphics/mid-sized-bun.png" id="1_eq8cl"]
-[ext_resource type="Script" path="res://BunInvaders/Scripts/Player.cs" id="1_r5m3v"]
-[ext_resource type="PackedScene" uid="uid://cnvg2tmqjy65p" path="res://BunInvaders/Scenes/projectile_player.tscn" id="2_rhuar"]
-[ext_resource type="Script" path="res://BunInvaders/Scripts/InvadersSpawner.cs" id="2_s3tbw"]
-[ext_resource type="PackedScene" uid="uid://cmtupb0si83yg" path="res://BunInvaders/Scenes/invader.tscn" id="5_olk4f"]
-[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="6_t0j6w"]
-[ext_resource type="Texture2D" uid="uid://b7sbsglnwjefc" path="res://BunInvaders/Graphics/background-with-stars.png" id="7_gt8d7"]
+[ext_resource type="Texture2D" uid="uid://b7sbsglnwjefc" path="res://BunInvaders/Graphics/background-with-stars.png" id="1_i44l4"]
+[ext_resource type="Script" path="res://BunInvaders/Scripts/Player.cs" id="2_kffmb"]
+[ext_resource type="PackedScene" uid="uid://cnvg2tmqjy65p" path="res://BunInvaders/Scenes/projectile_player.tscn" id="3_5u162"]
+[ext_resource type="Texture2D" uid="uid://ct08n8yoxt7f1" path="res://BunInvaders/Graphics/mid-sized-bun.png" id="4_fsoik"]
+[ext_resource type="Script" path="res://BunInvaders/Scripts/InvadersSpawner.cs" id="5_0gtnf"]
+[ext_resource type="PackedScene" uid="uid://cmtupb0si83yg" path="res://BunInvaders/Scenes/invader.tscn" id="6_wvsdq"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="7_is3h0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdmwl"]
 size = Vector2(14, 28)
@@ -35,16 +35,16 @@ b = Vector2(0, 200)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(-1, 0)
-texture = ExtResource("7_gt8d7")
+texture = ExtResource("1_i44l4")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("ProjectilesNode") groups=["player"]]
 position = Vector2(0, 105)
-script = ExtResource("1_r5m3v")
-Projectile = ExtResource("2_rhuar")
+script = ExtResource("2_kffmb")
+Projectile = ExtResource("3_5u162")
 ProjectilesNode = NodePath("../Projectiles")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("1_eq8cl")
+texture = ExtResource("4_fsoik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, -1)
@@ -58,8 +58,8 @@ shape = SubResource("RectangleShape2D_38i1s")
 
 [node name="Invaders" type="Node2D" parent="." node_paths=PackedStringArray("ProjectilesNode")]
 position = Vector2(0, -100)
-script = ExtResource("2_s3tbw")
-InvaderScene = ExtResource("5_olk4f")
+script = ExtResource("5_0gtnf")
+InvaderScene = ExtResource("6_wvsdq")
 ProjectilesNode = NodePath("../Projectiles")
 
 [node name="Projectiles" type="Node2D" parent="."]
@@ -96,7 +96,7 @@ position = Vector2(230, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameBorders/RightArea"]
 shape = SubResource("SegmentShape2D_bjp4r")
 
-[node name="Addons" parent="." instance=ExtResource("6_t0j6w")]
+[node name="Addons" parent="." instance=ExtResource("7_is3h0")]
 unique_name_in_owner = true
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]

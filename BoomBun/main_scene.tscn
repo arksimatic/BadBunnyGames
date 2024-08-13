@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvgc5s0oa72wi"]
 
-[ext_resource type="Script" path="res://BoomBun/Scripts/GameController.cs" id="1_4ne8y"]
-[ext_resource type="Script" path="res://BoomBun/Scripts/Restart.cs" id="2_k17tl"]
-[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="3_hnnxs"]
+[ext_resource type="Script" path="res://BoomBun/Scripts/GameController.cs" id="1_8m76s"]
+[ext_resource type="Script" path="res://BoomBun/Scripts/Restart.cs" id="2_337q4"]
+[ext_resource type="PackedScene" uid="uid://ba6e8rpntfxt6" path="res://Scenes/addons.tscn" id="3_3icsn"]
 
 [node name="BoomBun" type="Node2D"]
 
@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 2
-script = ExtResource("1_4ne8y")
+script = ExtResource("1_8m76s")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
@@ -27,7 +27,7 @@ offset_bottom = -29.0
 scale = Vector2(0.321193, 0.312591)
 theme_override_font_sizes/font_size = 12
 text = "RESTART"
-script = ExtResource("2_k17tl")
+script = ExtResource("2_337q4")
 
 [node name="Control" type="Control" parent="."]
 visible = false
@@ -51,7 +51,7 @@ text = "YOU WON"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Addons" parent="." instance=ExtResource("3_hnnxs")]
+[node name="Addons" parent="." instance=ExtResource("3_3icsn")]
 unique_name_in_owner = true
 
 [connection signal="pressed" from="Restart" to="Restart" method="_on_pressed"]
