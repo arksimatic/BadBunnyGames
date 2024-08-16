@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/DefaultPopUpController.cs" id="1_pip4n"]
 [ext_resource type="Theme" uid="uid://k43khfa7qlr4" path="res://popup_theme.tres" id="2_vfssc"]
 
-[node name="PopUpController" type="CanvasLayer"]
+[node name="PopUpController" type="CanvasLayer" node_paths=PackedStringArray("PopUpPanel")]
 script = ExtResource("1_pip4n")
+PopUpPanel = NodePath("PanelContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false

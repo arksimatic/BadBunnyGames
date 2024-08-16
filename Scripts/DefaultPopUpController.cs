@@ -4,6 +4,7 @@ namespace BadBunnyGames
 {
 	public partial class DefaultPopUpController : CanvasLayer
 	{
+		[Export] public PanelContainer PopUpPanel;
 		public override void _Ready()
 		{
 			ProcessMode = Node.ProcessModeEnum.Always;
@@ -11,22 +12,24 @@ namespace BadBunnyGames
 		public override void _Process(double delta)
 		{
 			if (Input.IsActionJustPressed(KeyCode.Esc) && Name == "Pause")
-			{
-				if(GetTree().Paused)
-					HidePopUp();
-				else
-					ShowPopUp();
-			}
+				ShowHidePopUp();
+		}
+		public void ShowHidePopUp()
+		{
+			if (GetTree().Paused)
+				HidePopUp();
+			else
+				ShowPopUp();
 		}
 		public void ShowPopUp()
 		{
 			GetTree().Paused = true;
-			GetChild<PanelContainer>(0).Show();
+			PopUpPanel.Show();
 		}
 		public void HidePopUp()
 		{
 			GetTree().Paused = false;
-			GetChild<PanelContainer>(0).Hide();
+			PopUpPanel.Hide();
 		}
 		private void _on_back_pressed()
 		{
