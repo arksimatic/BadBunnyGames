@@ -1,8 +1,8 @@
 namespace BadBunnyGames.BunThree
 {
-    public enum FallingTileType
-    {
-        I,
-        L
-    }
+	public enum FallingTileType
+	{
+		I,
+		L
+	}
 }

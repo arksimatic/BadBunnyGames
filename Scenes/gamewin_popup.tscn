@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3sr7v6w4coqw"]
+
+[ext_resource type="PackedScene" uid="uid://wvshg5spv4k4" path="res://Scenes/default_popup.tscn" id="1_o76vo"]
+
+[node name="PopUpController" instance=ExtResource("1_o76vo")]
+
+[node name="PanelContainer" parent="." index="0"]
+visible = true
+
+[node name="Label" parent="PanelContainer/GridContainer/HBoxContainer/VBoxContainer" index="0"]
+text = "YOU WON!"
+
+[node name="Menu2" type="Button" parent="PanelContainer/GridContainer/HBoxContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Menu"
+
+[node name="Spacer4" type="Control" parent="PanelContainer/GridContainer/HBoxContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Restart2" type="Button" parent="PanelContainer/GridContainer/HBoxContainer/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Play again"

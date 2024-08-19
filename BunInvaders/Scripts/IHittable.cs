@@ -1,7 +1,7 @@
 namespace BadBunnyGames.BunInvaders
 {
-    public partial interface IHittable
-    {
-        void TakeDamage();
-    }
+	public partial interface IHittable
+	{
+		void TakeDamage();
+	}
 }
