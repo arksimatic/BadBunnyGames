@@ -8,5 +8,9 @@ namespace BadBunnyGames
 		{
 			GetNode<DefaultPopUpController>("GameOver").ShowPopUp();
 		}
+		public void _on_game_win()
+		{
+			GetNode<DefaultPopUpController>("Win").ShowPopUp();
+		}
 	}
 }

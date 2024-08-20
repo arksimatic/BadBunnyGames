@@ -4,9 +4,6 @@
 
 [node name="PopUpController" instance=ExtResource("1_o76vo")]
 
-[node name="PanelContainer" parent="." index="0"]
-visible = true
-
 [node name="Label" parent="PanelContainer/GridContainer/HBoxContainer/VBoxContainer" index="0"]
 text = "YOU WON!"
 
