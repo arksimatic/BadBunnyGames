@@ -24,15 +24,11 @@ namespace BadBunnyGames.BomBun
 		}
 		private void _on_pressed()
 		{
-			if (IsBun)
-				GD.Print("BOMB");
-			GD.Print($"BunBombsAround: {BunAroundCount}");
 			_board.ButtonPressed(this);
 		}
 
 		public void Uncover(Boolean automatic)
 		{
-
 			if (IsLocked && !automatic)
 				return;
 
